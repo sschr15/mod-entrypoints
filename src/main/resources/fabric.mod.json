@@ -1,38 +1,22 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "mod-entrypoints",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "ModEntrypoints",
+  "description": "Creates entrypoints for each loaded mod by its ID",
   "authors": [
-    "Me!"
+    "sschr15"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/sschr15/mod-entrypoints"
   },
-
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
+  "license": "MIT",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
-    ]
-  },
-  "mixins": [
-    "modid.mixins.json"
-  ],
-
-  "depends": {
-    "fabricloader": ">=0.13.3",
-    "fabric": "*",
-    "minecraft": "1.18.x",
-    "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
+    "main": ["sschr15.fabricmods.modentrypoints.impl.ModEntrypointInitializer"],
+    "preLaunch": ["sschr15.fabricmods.modentrypoints.impl.ModEntrypointPreInit"],
+    "server": ["sschr15.fabricmods.modentrypoints.impl.ModEntrypointServer"],
+    "client": ["sschr15.fabricmods.modentrypoints.impl.ModEntrypointClient"]
   }
 }
